@@ -96,7 +96,8 @@ curl https://raw.githubusercontent.com/projectcalico/calico/v3.28.0/manifests/cu
 kubectl apply -f custom-resources.yaml
 
 13) Now to add Worker Nodes - When we initalize the control node there will be a command geneated in the end which we need to execute from root user in worker nodes.
-
+Sample - kubeadm join private ip of control node:6443 --token xxxxxxx
+        --discovery-token-ca-cert-hash sha256:xxxxxxx
 14) Once above is executed - We can run Kubectl get nodes on control node to check if worker nodes are ready or not
 
 15) If any issue during this, kubetctl get pods -A and kubectl get nodes and then we can inspect logs for container which are not in running status
